@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -97,7 +97,6 @@
 				4BE350C65F2E32EFD9D384FE /* Pods-webrtc-heartbeat.debug.xcconfig */,
 				A5C8FAEAEA541C4AE6F18768 /* Pods-webrtc-heartbeat.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
