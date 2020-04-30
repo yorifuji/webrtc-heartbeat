@@ -44,14 +44,23 @@
                                             <constraint firstAttribute="height" constant="100" id="oSz-5A-IS5"/>
                                         </constraints>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRX-Dt-7eg">
+                                        <rect key="frame" x="330" y="40" width="52" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="CRX-Dt-7eg" secondAttribute="trailing" constant="32" id="Et9-Jl-oJG"/>
                                     <constraint firstItem="aVj-nb-DJx" firstAttribute="trailing" secondItem="huc-yw-bhc" secondAttribute="trailing" constant="-8" id="PVK-V3-LEJ"/>
                                     <constraint firstItem="jCC-fQ-xQ3" firstAttribute="trailing" secondItem="huc-yw-bhc" secondAttribute="trailing" id="Pyq-yG-YQc"/>
+                                    <constraint firstItem="CRX-Dt-7eg" firstAttribute="centerY" secondItem="aVj-nb-DJx" secondAttribute="centerY" id="RTS-5z-cE8"/>
                                     <constraint firstItem="aVj-nb-DJx" firstAttribute="top" secondItem="huc-yw-bhc" secondAttribute="top" constant="8.0000000000000018" id="U6V-wo-kVz"/>
                                     <constraint firstItem="jCC-fQ-xQ3" firstAttribute="bottom" secondItem="huc-yw-bhc" secondAttribute="bottom" id="b52-sq-hdW"/>
                                     <constraint firstItem="jCC-fQ-xQ3" firstAttribute="leading" secondItem="huc-yw-bhc" secondAttribute="leading" id="ggJ-KU-nVm"/>
+                                    <constraint firstItem="CRX-Dt-7eg" firstAttribute="centerX" secondItem="aVj-nb-DJx" secondAttribute="centerX" id="ycn-Rn-pqg"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tt4-sS-TGU" userLabel="Remote Video View">
@@ -78,6 +87,12 @@
                                             <constraint firstAttribute="width" constant="100" id="UaH-9d-YKJ"/>
                                         </constraints>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sw9-on-9N3">
+                                        <rect key="frame" x="330" y="40" width="52" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -87,7 +102,10 @@
                                     <constraint firstItem="JRE-c8-3L3" firstAttribute="centerX" secondItem="Tt4-sS-TGU" secondAttribute="centerX" id="SZM-sK-5B9"/>
                                     <constraint firstItem="OJA-hg-RcE" firstAttribute="trailing" secondItem="Tt4-sS-TGU" secondAttribute="trailing" id="aab-4L-jNC"/>
                                     <constraint firstItem="OJA-hg-RcE" firstAttribute="leading" secondItem="Tt4-sS-TGU" secondAttribute="leading" id="cpa-Js-6l6"/>
+                                    <constraint firstItem="Sw9-on-9N3" firstAttribute="centerY" secondItem="sNl-nw-YiX" secondAttribute="centerY" id="fWK-pF-SNf"/>
                                     <constraint firstItem="sNl-nw-YiX" firstAttribute="trailing" secondItem="Tt4-sS-TGU" secondAttribute="trailing" constant="-8" id="kSe-iM-7kR"/>
+                                    <constraint firstItem="Sw9-on-9N3" firstAttribute="centerX" secondItem="sNl-nw-YiX" secondAttribute="centerX" id="naU-ON-3UY"/>
+                                    <constraint firstAttribute="trailing" secondItem="Sw9-on-9N3" secondAttribute="trailing" constant="32" id="oiA-uv-Ffd"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="local video" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdn-pG-HH9">
