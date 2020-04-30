@@ -16,6 +16,7 @@
 		E3E12BBA24598A22001AC123 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3E12BB824598A22001AC123 /* LaunchScreen.storyboard */; };
 		E3E12BC524598A22001AC123 /* webrtc_heartbeatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E12BC424598A22001AC123 /* webrtc_heartbeatTests.swift */; };
 		E3E12BD024598A22001AC123 /* webrtc_heartbeatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E12BCF24598A22001AC123 /* webrtc_heartbeatUITests.swift */; };
+		F90D81EF987E441EE586EBDD /* Pods_webrtc_heartbeat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25261A0280F022AEE13886BF /* Pods_webrtc_heartbeat.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		25261A0280F022AEE13886BF /* Pods_webrtc_heartbeat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_webrtc_heartbeat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BE350C65F2E32EFD9D384FE /* Pods-webrtc-heartbeat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-webrtc-heartbeat.debug.xcconfig"; path = "Target Support Files/Pods-webrtc-heartbeat/Pods-webrtc-heartbeat.debug.xcconfig"; sourceTree = "<group>"; };
+		A5C8FAEAEA541C4AE6F18768 /* Pods-webrtc-heartbeat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-webrtc-heartbeat.release.xcconfig"; path = "Target Support Files/Pods-webrtc-heartbeat/Pods-webrtc-heartbeat.release.xcconfig"; sourceTree = "<group>"; };
 		E3E12BA824598A1F001AC123 /* webrtc-heartbeat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "webrtc-heartbeat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3E12BAB24598A1F001AC123 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3E12BAD24598A1F001AC123 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F90D81EF987E441EE586EBDD /* Pods_webrtc_heartbeat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17A073F08136109A2ACF94DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				25261A0280F022AEE13886BF /* Pods_webrtc_heartbeat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D752EBF6CADD1FC1F37D73AE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4BE350C65F2E32EFD9D384FE /* Pods-webrtc-heartbeat.debug.xcconfig */,
+				A5C8FAEAEA541C4AE6F18768 /* Pods-webrtc-heartbeat.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E3E12B9F24598A1E001AC123 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +108,8 @@
 				E3E12BC324598A22001AC123 /* webrtc-heartbeatTests */,
 				E3E12BCE24598A22001AC123 /* webrtc-heartbeatUITests */,
 				E3E12BA924598A1F001AC123 /* Products */,
+				D752EBF6CADD1FC1F37D73AE /* Pods */,
+				17A073F08136109A2ACF94DE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -138,9 +163,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E3E12BD424598A22001AC123 /* Build configuration list for PBXNativeTarget "webrtc-heartbeat" */;
 			buildPhases = (
+				0E764F525FB0CDFD7989C499 /* [CP] Check Pods Manifest.lock */,
 				E3E12BA424598A1F001AC123 /* Sources */,
 				E3E12BA524598A1F001AC123 /* Frameworks */,
 				E3E12BA624598A1F001AC123 /* Resources */,
+				5A3E3CF598093C6C01373A6E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -256,6 +283,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0E764F525FB0CDFD7989C499 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-webrtc-heartbeat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5A3E3CF598093C6C01373A6E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-webrtc-heartbeat/Pods-webrtc-heartbeat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-webrtc-heartbeat/Pods-webrtc-heartbeat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-webrtc-heartbeat/Pods-webrtc-heartbeat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E3E12BA424598A1F001AC123 /* Sources */ = {
@@ -436,6 +505,7 @@
 		};
 		E3E12BD524598A22001AC123 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4BE350C65F2E32EFD9D384FE /* Pods-webrtc-heartbeat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -454,6 +524,7 @@
 		};
 		E3E12BD624598A22001AC123 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5C8FAEAEA541C4AE6F18768 /* Pods-webrtc-heartbeat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
