@@ -27,7 +27,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="huc-yw-bhc" userLabel="Local Video View">
-                                <rect key="frame" x="0.0" y="429" width="414" height="384"/>
+                                <rect key="frame" x="0.0" y="428.66666666666674" width="414" height="384.33333333333326"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="local" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCC-fQ-xQ3">
                                         <rect key="frame" x="0.0" y="360.33333333333331" width="414" height="24"/>
@@ -36,10 +36,20 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="aVj-nb-DJx">
+                                        <rect key="frame" x="306" y="10" width="100" height="97"/>
+                                        <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="JkP-oj-gRG"/>
+                                            <constraint firstAttribute="height" constant="100" id="oSz-5A-IS5"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="aVj-nb-DJx" firstAttribute="trailing" secondItem="huc-yw-bhc" secondAttribute="trailing" constant="-8" id="PVK-V3-LEJ"/>
                                     <constraint firstItem="jCC-fQ-xQ3" firstAttribute="trailing" secondItem="huc-yw-bhc" secondAttribute="trailing" id="Pyq-yG-YQc"/>
+                                    <constraint firstItem="aVj-nb-DJx" firstAttribute="top" secondItem="huc-yw-bhc" secondAttribute="top" constant="8.0000000000000018" id="U6V-wo-kVz"/>
                                     <constraint firstItem="jCC-fQ-xQ3" firstAttribute="bottom" secondItem="huc-yw-bhc" secondAttribute="bottom" id="b52-sq-hdW"/>
                                     <constraint firstItem="jCC-fQ-xQ3" firstAttribute="leading" secondItem="huc-yw-bhc" secondAttribute="leading" id="ggJ-KU-nVm"/>
                                 </constraints>
@@ -60,14 +70,24 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="sNl-nw-YiX">
+                                        <rect key="frame" x="306" y="10" width="100" height="97"/>
+                                        <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="AD2-kO-UzV"/>
+                                            <constraint firstAttribute="width" constant="100" id="UaH-9d-YKJ"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="OJA-hg-RcE" firstAttribute="bottom" secondItem="Tt4-sS-TGU" secondAttribute="bottom" id="MUo-Ke-RLM"/>
+                                    <constraint firstItem="sNl-nw-YiX" firstAttribute="top" secondItem="Tt4-sS-TGU" secondAttribute="top" constant="8" id="N2k-VP-5Cd"/>
                                     <constraint firstItem="JRE-c8-3L3" firstAttribute="centerY" secondItem="Tt4-sS-TGU" secondAttribute="centerY" id="PGx-We-pjJ"/>
                                     <constraint firstItem="JRE-c8-3L3" firstAttribute="centerX" secondItem="Tt4-sS-TGU" secondAttribute="centerX" id="SZM-sK-5B9"/>
                                     <constraint firstItem="OJA-hg-RcE" firstAttribute="trailing" secondItem="Tt4-sS-TGU" secondAttribute="trailing" id="aab-4L-jNC"/>
                                     <constraint firstItem="OJA-hg-RcE" firstAttribute="leading" secondItem="Tt4-sS-TGU" secondAttribute="leading" id="cpa-Js-6l6"/>
+                                    <constraint firstItem="sNl-nw-YiX" firstAttribute="trailing" secondItem="Tt4-sS-TGU" secondAttribute="trailing" constant="-8" id="kSe-iM-7kR"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="local video" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdn-pG-HH9">
@@ -159,6 +179,7 @@
     </scenes>
     <resources>
         <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="video.fill" catalog="system" width="128" height="82"/>
     </resources>
 </document>
