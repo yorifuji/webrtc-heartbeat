@@ -59,6 +59,10 @@ extension FirstViewController {
     func setupStream(peer:SKWPeer){
         SKWNavigator.initialize(peer);
         let constraints:SKWMediaConstraints = SKWMediaConstraints()
+//        constraints.minFrameRate = 30
+        constraints.maxFrameRate = 30
+//        constraints.minWidth = 1280
+//        constraints.minHeight = 720
         self.localStream = SKWNavigator.getUserMedia(constraints)
         self.localStream?.addVideoRenderer(self.localStreamView, track: 0)
     }
@@ -118,6 +122,7 @@ extension FirstViewController {
                 DispatchQueue.main.async {
 //                    self.targetPeerIdLabel.text = self.remoteStream?.peerId
 //                    self.targetPeerIdLabel.textColor = UIColor.darkGray
+                    self.remoteOffLine.isHidden = true
                     self.remoteStream?.addVideoRenderer(self.remoteStreamView, track: 0)
                 }
 //                self.changeConnectionStatusUI(connected: true)
@@ -131,6 +136,7 @@ extension FirstViewController {
                     self.remoteStream?.removeVideoRenderer(self.remoteStreamView, track: 0)
                     self.remoteStream = nil
                     self.mediaConnection = nil
+                    self.remoteOffLine.isHidden = false
                 }
 //                self.changeConnectionStatusUI(connected: false)
             }
