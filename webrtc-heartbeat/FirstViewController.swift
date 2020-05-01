@@ -11,11 +11,6 @@ import SkyWay
 
 class FirstViewController: UIViewController {
 
-    fileprivate var peer: SKWPeer?
-    fileprivate var mediaConnection: SKWMediaConnection?
-    fileprivate var localStream: SKWMediaStream?
-    fileprivate var remoteStream: SKWMediaStream?
-    
     @IBOutlet weak var remoteHBM: UILabel!
     @IBOutlet weak var remoteName: UILabel!
     @IBOutlet weak var remoteOffLine: UILabel!
@@ -27,6 +22,11 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var localOffLine: UILabel!
     @IBOutlet weak var localHeartMark: UIImageView!
     @IBOutlet weak var localStreamView: SKWVideo!
+
+    private var peer: SKWPeer?
+    private var mediaConnection: SKWMediaConnection?
+    private var localStream: SKWMediaStream?
+    private var remoteStream: SKWMediaStream?
 
     override func viewDidLoad() {
         super.viewDidLoad()
