@@ -44,8 +44,12 @@
                                             <constraint firstAttribute="height" constant="100" id="oSz-5A-IS5"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRX-Dt-7eg">
-                                        <rect key="frame" x="330" y="40" width="52" height="36"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRX-Dt-7eg">
+                                        <rect key="frame" x="326" y="38" width="60" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Lsf-dZ-WHQ"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="kL4-Oq-bR4"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -53,7 +57,6 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="CRX-Dt-7eg" secondAttribute="trailing" constant="32" id="Et9-Jl-oJG"/>
                                     <constraint firstItem="aVj-nb-DJx" firstAttribute="trailing" secondItem="huc-yw-bhc" secondAttribute="trailing" constant="-8" id="PVK-V3-LEJ"/>
                                     <constraint firstItem="jCC-fQ-xQ3" firstAttribute="trailing" secondItem="huc-yw-bhc" secondAttribute="trailing" id="Pyq-yG-YQc"/>
                                     <constraint firstItem="CRX-Dt-7eg" firstAttribute="centerY" secondItem="aVj-nb-DJx" secondAttribute="centerY" id="RTS-5z-cE8"/>
@@ -87,8 +90,12 @@
                                             <constraint firstAttribute="width" constant="100" id="UaH-9d-YKJ"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sw9-on-9N3">
-                                        <rect key="frame" x="330" y="40" width="52" height="36"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sw9-on-9N3">
+                                        <rect key="frame" x="326" y="38" width="60" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="JPx-t4-4xe"/>
+                                            <constraint firstAttribute="height" constant="40" id="noD-q4-kO4"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -105,7 +112,6 @@
                                     <constraint firstItem="Sw9-on-9N3" firstAttribute="centerY" secondItem="sNl-nw-YiX" secondAttribute="centerY" id="fWK-pF-SNf"/>
                                     <constraint firstItem="sNl-nw-YiX" firstAttribute="trailing" secondItem="Tt4-sS-TGU" secondAttribute="trailing" constant="-8" id="kSe-iM-7kR"/>
                                     <constraint firstItem="Sw9-on-9N3" firstAttribute="centerX" secondItem="sNl-nw-YiX" secondAttribute="centerX" id="naU-ON-3UY"/>
-                                    <constraint firstAttribute="trailing" secondItem="Sw9-on-9N3" secondAttribute="trailing" constant="32" id="oiA-uv-Ffd"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OFF LINE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdn-pG-HH9">
@@ -137,9 +143,13 @@
                     <tabBarItem key="tabBarItem" title="Live" image="video.fill" catalog="system" id="gDi-0j-4XJ"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="localHBM" destination="CRX-Dt-7eg" id="68p-Se-KGJ"/>
+                        <outlet property="localHeartMark" destination="aVj-nb-DJx" id="RyR-WY-5AB"/>
                         <outlet property="localName" destination="jCC-fQ-xQ3" id="Ewf-ac-UId"/>
                         <outlet property="localOffLine" destination="bdn-pG-HH9" id="mrS-OK-sgw"/>
                         <outlet property="localStreamView" destination="huc-yw-bhc" id="pqH-Z0-mfl"/>
+                        <outlet property="remoteHBM" destination="Sw9-on-9N3" id="h8L-Al-VS4"/>
+                        <outlet property="remoteHeartMark" destination="sNl-nw-YiX" id="goY-iQ-QjR"/>
                         <outlet property="remoteName" destination="OJA-hg-RcE" id="Xv6-6p-VgF"/>
                         <outlet property="remoteOffLine" destination="JRE-c8-3L3" id="uxY-oM-hDr"/>
                         <outlet property="remoteStreamView" destination="Tt4-sS-TGU" id="UcT-S8-xIP"/>

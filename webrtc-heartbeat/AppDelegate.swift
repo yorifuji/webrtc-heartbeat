@@ -11,8 +11,8 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var skywayAPIKey:String = "8888204a-6d78-4863-b791-c68d70ea6268"
-    var skywayDomain:String = "localhost"
+    var skywayAPIKey = "8888204a-6d78-4863-b791-c68d70ea6268"
+    var skywayDomain = "localhost"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

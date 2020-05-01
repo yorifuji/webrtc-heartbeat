@@ -16,11 +16,16 @@ class FirstViewController: UIViewController {
     fileprivate var localStream: SKWMediaStream?
     fileprivate var remoteStream: SKWMediaStream?
     
+    @IBOutlet weak var remoteHBM: UILabel!
     @IBOutlet weak var remoteName: UILabel!
     @IBOutlet weak var remoteOffLine: UILabel!
+    @IBOutlet weak var remoteHeartMark: UIImageView!
     @IBOutlet weak var remoteStreamView: SKWVideo!
+
+    @IBOutlet weak var localHBM: UILabel!
     @IBOutlet weak var localName: UILabel!
     @IBOutlet weak var localOffLine: UILabel!
+    @IBOutlet weak var localHeartMark: UIImageView!
     @IBOutlet weak var localStreamView: SKWVideo!
 
     override func viewDidLoad() {
