@@ -27,6 +27,7 @@ class FirstViewController: UIViewController {
     private var mediaConnection: SKWMediaConnection?
     private var localStream: SKWMediaStream?
     private var remoteStream: SKWMediaStream?
+    private var meshRoom: SKWRoom?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,6 +83,20 @@ extension FirstViewController {
             print("failed to call :\(targetPeerId)")
         }
     }
+
+    func join(targetRoom: String) {
+        let option = SKWRoomOption()
+        option.mode = .ROOM_MODE_MESH
+        option.stream = self.localStream
+
+        self.meshRoom = self.peer?.joinRoom(withName: targetRoom, options: option)
+        if let room = self.meshRoom {
+            self.setupRoomCallbacks(room)
+        }
+        else {
+            print("failed to join room :\(targetRoom)")
+        }
+    }
 }
 
 // MARK: skyway callbacks
@@ -103,6 +118,7 @@ extension FirstViewController {
                 DispatchQueue.main.async {
 //                    self.myPeerIdLabel.text = peerId
 //                    self.myPeerIdLabel.textColor = UIColor.darkGray
+                    self.join(targetRoom: Setting.shared.room)
                 }
                 print("your peerId: \(peerId)")
             }
@@ -146,6 +162,55 @@ extension FirstViewController {
 //                self.changeConnectionStatusUI(connected: false)
             }
         })
+    }
+
+    func setupRoomCallbacks(_ room: SKWRoom) {
+        room.on(.ROOM_EVENT_OPEN) { obj in
+            print("ROOM_EVENT_OPEN: \(String(describing: obj))")
+        }
+
+        room.on(.ROOM_EVENT_CLOSE) { obj in
+            print("ROOM_EVENT_CLOSE")
+        }
+
+        room.on(.ROOM_EVENT_ERROR) { obj in
+            print("ROOM_EVENT_ERROR")
+        }
+
+        room.on(.ROOM_EVENT_STREAM) { obj in
+            print("ROOM_EVENT_STREAM")
+            self.remoteStream = obj as? SKWMediaStream
+            DispatchQueue.main.async {
+                self.remoteOffLine.isHidden = true
+                self.remoteStream?.addVideoRenderer(self.remoteStreamView, track: 0)
+            }
+        }
+
+        room.on(.ROOM_EVENT_REMOVE_STREAM) { obj in
+            print("ROOM_EVENT_REMOVE_STREAM")
+            DispatchQueue.main.async {
+                self.remoteStream?.removeVideoRenderer(self.remoteStreamView, track: 0)
+                self.remoteStream = nil
+                self.remoteOffLine.isHidden = false
+            }
+        }
+
+        room.on(.ROOM_EVENT_PEER_JOIN) { obj in
+            print("ROOM_EVENT_PEER_JOIN")
+        }
+
+        room.on(.ROOM_EVENT_PEER_LEAVE) { obj in
+            print("ROOM_EVENT_PEER_LEAVE")
+            DispatchQueue.main.async {
+                self.remoteStream?.removeVideoRenderer(self.remoteStreamView, track: 0)
+                self.remoteStream = nil
+                self.remoteOffLine.isHidden = false
+            }
+        }
+
+        room.on(.ROOM_EVENT_DATA) { obj in
+            print("ROOM_EVENT_DATA")
+        }
     }
 }
 
