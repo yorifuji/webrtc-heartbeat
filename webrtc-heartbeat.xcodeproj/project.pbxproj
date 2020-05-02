@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E3D10C6F245D7B5600C97BE5 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D10C6E245D7B5600C97BE5 /* Setting.swift */; };
 		E3E12BAC24598A1F001AC123 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E12BAB24598A1F001AC123 /* AppDelegate.swift */; };
 		E3E12BAE24598A1F001AC123 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E12BAD24598A1F001AC123 /* SceneDelegate.swift */; };
 		E3E12BB024598A1F001AC123 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E12BAF24598A1F001AC123 /* FirstViewController.swift */; };
@@ -40,6 +41,7 @@
 		25261A0280F022AEE13886BF /* Pods_webrtc_heartbeat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_webrtc_heartbeat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BE350C65F2E32EFD9D384FE /* Pods-webrtc-heartbeat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-webrtc-heartbeat.debug.xcconfig"; path = "Target Support Files/Pods-webrtc-heartbeat/Pods-webrtc-heartbeat.debug.xcconfig"; sourceTree = "<group>"; };
 		A5C8FAEAEA541C4AE6F18768 /* Pods-webrtc-heartbeat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-webrtc-heartbeat.release.xcconfig"; path = "Target Support Files/Pods-webrtc-heartbeat/Pods-webrtc-heartbeat.release.xcconfig"; sourceTree = "<group>"; };
+		E3D10C6E245D7B5600C97BE5 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		E3E12BA824598A1F001AC123 /* webrtc-heartbeat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "webrtc-heartbeat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3E12BAB24598A1F001AC123 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3E12BAD24598A1F001AC123 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				E3E12BB624598A22001AC123 /* Assets.xcassets */,
 				E3E12BB824598A22001AC123 /* LaunchScreen.storyboard */,
 				E3E12BBB24598A22001AC123 /* Info.plist */,
+				E3D10C6E245D7B5600C97BE5 /* Setting.swift */,
 			);
 			path = "webrtc-heartbeat";
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3D10C6F245D7B5600C97BE5 /* Setting.swift in Sources */,
 				E3E12BB224598A1F001AC123 /* SecondViewController.swift in Sources */,
 				E3E12BB024598A1F001AC123 /* FirstViewController.swift in Sources */,
 				E3E12BAC24598A1F001AC123 /* AppDelegate.swift in Sources */,
