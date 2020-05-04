@@ -97,6 +97,10 @@ extension FirstViewController {
             print("failed to join room :\(targetRoom)")
         }
     }
+
+    func send(_ data: NSObject) {
+        self.meshRoom?.send(data)
+    }
 }
 
 // MARK: skyway callbacks
