@@ -65,7 +65,7 @@ extension FirstViewController {
     func setupStream(peer:SKWPeer){
         SKWNavigator.initialize(peer);
         let constraints:SKWMediaConstraints = SKWMediaConstraints()
-//        constraints.minFrameRate = 30
+        constraints.minFrameRate = 30
         constraints.maxFrameRate = 30
 //        constraints.minWidth = 1280
 //        constraints.minHeight = 720
