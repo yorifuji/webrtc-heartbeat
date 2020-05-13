@@ -15,6 +15,7 @@
 		E394933D246C0B6B00B64B6F /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E394933C246C0B6B00B64B6F /* NotificationController.swift */; };
 		E394933F246C0B6C00B64B6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E394933E246C0B6C00B64B6F /* Assets.xcassets */; };
 		E3949344246C0B6C00B64B6F /* watch-bpm-monitor.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = E3949327246C0B6B00B64B6F /* watch-bpm-monitor.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E394934F246C0C8C00B64B6F /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E394934E246C0C8C00B64B6F /* HealthKit.framework */; };
 		E3D10C6F245D7B5600C97BE5 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D10C6E245D7B5600C97BE5 /* Setting.swift */; };
 		E3D10C71245D7ECE00C97BE5 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D10C70245D7ECE00C97BE5 /* SettingViewController.swift */; };
 		E3E12BAC24598A1F001AC123 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E12BAB24598A1F001AC123 /* AppDelegate.swift */; };
@@ -100,6 +101,8 @@
 		E394933E246C0B6C00B64B6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3949340246C0B6C00B64B6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3949341246C0B6C00B64B6F /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		E394934D246C0C8C00B64B6F /* watch-bpm-monitor Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "watch-bpm-monitor Extension.entitlements"; sourceTree = "<group>"; };
+		E394934E246C0C8C00B64B6F /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS6.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		E3D10C6E245D7B5600C97BE5 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		E3D10C70245D7ECE00C97BE5 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		E3E12BA824598A1F001AC123 /* webrtc-heartbeat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "webrtc-heartbeat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,10 +123,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3E9CC87F55F31A6F938587D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E3949330246C0B6B00B64B6F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E394934F246C0C8C00B64B6F /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +166,7 @@
 		17A073F08136109A2ACF94DE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E394934E246C0C8C00B64B6F /* HealthKit.framework */,
 				25261A0280F022AEE13886BF /* Pods_webrtc_heartbeat.framework */,
 			);
 			name = Frameworks;
@@ -182,6 +194,7 @@
 		E3949337246C0B6B00B64B6F /* watch-bpm-monitor Extension */ = {
 			isa = PBXGroup;
 			children = (
+				E394934D246C0C8C00B64B6F /* watch-bpm-monitor Extension.entitlements */,
 				E3949338246C0B6B00B64B6F /* InterfaceController.swift */,
 				E394933A246C0B6B00B64B6F /* ExtensionDelegate.swift */,
 				E394933C246C0B6B00B64B6F /* NotificationController.swift */,
@@ -262,6 +275,7 @@
 			buildPhases = (
 				E3949325246C0B6B00B64B6F /* Resources */,
 				E3949348246C0B6C00B64B6F /* Embed App Extensions */,
+				3E9CC87F55F31A6F938587D6 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -619,6 +633,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "watch-bpm-monitor Extension/watch-bpm-monitor Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5QJR7K89TS;
 				INFOPLIST_FILE = "watch-bpm-monitor Extension/Info.plist";
@@ -641,6 +656,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "watch-bpm-monitor Extension/watch-bpm-monitor Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5QJR7K89TS;
 				INFOPLIST_FILE = "watch-bpm-monitor Extension/Info.plist";
