@@ -9,6 +9,7 @@
 import WatchKit
 import Foundation
 import HealthKit
+import WatchConnectivity
 
 
 class InterfaceController: WKInterfaceController {
@@ -43,6 +44,15 @@ class InterfaceController: WKInterfaceController {
                 print("Requests permission is not allowed.")
                 return
             }
+        }
+
+        if WCSession.isSupported() {
+            let session = WCSession.default
+            session.delegate = self
+            session.activate()
+        }
+        else {
+            print("WCSession not supported")
         }
     }
 
@@ -103,6 +113,13 @@ extension InterfaceController: HKWorkoutSessionDelegate {
     }
 }
 
+extension InterfaceController: WCSessionDelegate {
+
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        print(#function)
+    }
+
+}
 
 extension InterfaceController {
 
@@ -123,11 +140,15 @@ extension InterfaceController {
         guard let samples = samples as? [HKQuantitySample] else { return }
         guard let quantity = samples.last?.quantity else { return }
 
-        let text = String(quantity.doubleValue(for: heartRateUnit))
+        let bpm = String(quantity.doubleValue(for: heartRateUnit))
 //        print(text)
-        let attrStr = NSAttributedString(string: text, attributes:[NSAttributedString.Key.font:fontSize])
+        let attrStr = NSAttributedString(string: bpm, attributes:[NSAttributedString.Key.font:fontSize])
         DispatchQueue.main.async {
             self.label.setAttributedText(attrStr)
+        }
+
+        WCSession.default.sendMessage(["bpm": bpm], replyHandler: nil) { error in
+            print(error.localizedDescription)
         }
     }
 
