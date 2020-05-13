@@ -8,6 +8,7 @@
 
 import UIKit
 import SkyWay
+import WatchConnectivity
 
 class FirstViewController: UIViewController {
 
@@ -31,9 +32,23 @@ class FirstViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.localHBM.isHidden = true
+        self.remoteHBM.isHidden = true
+
         self.localOffLine.isHidden = true
-//        self.remoteOffLine.isHidden = true
-        self.setup()
+        self.remoteOffLine.isHidden = true
+
+        if WCSession.isSupported() {
+            let session = WCSession.default
+            session.delegate = self
+            session.activate()
+        }
+        else {
+            print("WCSession not supported")
+        }
+
+        self.setupSkyway()
     }
 }
 
@@ -41,7 +56,7 @@ class FirstViewController: UIViewController {
 
 extension FirstViewController {
     
-    func setup(){
+    func setupSkyway(){
         
         guard let apikey = (UIApplication.shared.delegate as? AppDelegate)?.skywayAPIKey, let domain = (UIApplication.shared.delegate as? AppDelegate)?.skywayDomain else{
             print("Not set apikey or domain")
@@ -218,4 +233,40 @@ extension FirstViewController {
     }
 }
 
+extension FirstViewController: WCSessionDelegate {
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        print(#function)
+    }
+
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        print(#function)
+    }
+
+    func sessionDidDeactivate(_ session: WCSession) {
+        print(#function)
+    }
+
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+        print(#function)
+        print(message)
+        DispatchQueue.main.async {
+            if self.localHBM.isHidden {
+                self.localHBM.isHidden = false
+            }
+            self.localHBM.text = message["bpm"] as? String
+        }
+    }
+
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+        print(#function)
+        print(message)
+        DispatchQueue.main.async {
+            if self.localHBM.isHidden {
+                self.localHBM.isHidden = false
+            }
+            self.localHBM.text = message["bpm"] as? String
+        }
+        replyHandler(["result" : "ok"])
+    }
+}
 
