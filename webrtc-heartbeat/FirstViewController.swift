@@ -39,6 +39,9 @@ class FirstViewController: UIViewController {
         self.localOffLine.isHidden = true
         self.remoteOffLine.isHidden = true
 
+        self.localHeartMark.isHidden = true
+        self.remoteHeartMark.isHidden = true
+
         if WCSession.isSupported() {
             let session = WCSession.default
             session.delegate = self
@@ -229,6 +232,18 @@ extension FirstViewController {
 
         room.on(.ROOM_EVENT_DATA) { obj in
             print("ROOM_EVENT_DATA")
+            let message = obj as! SKWRoomDataMessage
+            let data = message.data as! Data
+            let json = try? JSONSerialization.jsonObject(with: data, options:[])
+            let dict = json as! [String: Any]
+            print(dict)
+            DispatchQueue.main.async {
+                if self.remoteHBM.isHidden {
+                    self.remoteHBM.isHidden = false
+                    self.remoteHeartMark.isHidden = false
+                }
+                self.remoteHBM.text = dict["bpm"] as? String
+            }
         }
     }
 }
@@ -252,21 +267,13 @@ extension FirstViewController: WCSessionDelegate {
         DispatchQueue.main.async {
             if self.localHBM.isHidden {
                 self.localHBM.isHidden = false
+                self.localHeartMark.isHidden = false
             }
             self.localHBM.text = message["bpm"] as? String
         }
-    }
-
-    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
-        print(#function)
-        print(message)
-        DispatchQueue.main.async {
-            if self.localHBM.isHidden {
-                self.localHBM.isHidden = false
-            }
-            self.localHBM.text = message["bpm"] as? String
+        if let data = try? JSONSerialization.data(withJSONObject: message, options: []) {
+            send(data as NSData)
         }
-        replyHandler(["result" : "ok"])
     }
 }
 
