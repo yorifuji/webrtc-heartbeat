@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E36135B92470439F0044A4FB /* person2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E36135B72470439F0044A4FB /* person2.jpg */; };
+		E36135BA2470439F0044A4FB /* person1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E36135B82470439F0044A4FB /* person1.jpg */; };
 		E394932B246C0B6B00B64B6F /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3949329246C0B6B00B64B6F /* Interface.storyboard */; };
 		E394932D246C0B6B00B64B6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E394932C246C0B6B00B64B6F /* Assets.xcassets */; };
 		E3949334246C0B6B00B64B6F /* watch-bpm-monitor Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E3949333246C0B6B00B64B6F /* watch-bpm-monitor Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -90,6 +92,8 @@
 		25261A0280F022AEE13886BF /* Pods_webrtc_heartbeat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_webrtc_heartbeat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BE350C65F2E32EFD9D384FE /* Pods-webrtc-heartbeat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-webrtc-heartbeat.debug.xcconfig"; path = "Target Support Files/Pods-webrtc-heartbeat/Pods-webrtc-heartbeat.debug.xcconfig"; sourceTree = "<group>"; };
 		A5C8FAEAEA541C4AE6F18768 /* Pods-webrtc-heartbeat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-webrtc-heartbeat.release.xcconfig"; path = "Target Support Files/Pods-webrtc-heartbeat/Pods-webrtc-heartbeat.release.xcconfig"; sourceTree = "<group>"; };
+		E36135B72470439F0044A4FB /* person2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = person2.jpg; sourceTree = "<group>"; };
+		E36135B82470439F0044A4FB /* person1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = person1.jpg; sourceTree = "<group>"; };
 		E3949327246C0B6B00B64B6F /* watch-bpm-monitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "watch-bpm-monitor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E394932A246C0B6B00B64B6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		E394932C246C0B6B00B64B6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -181,6 +185,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		E36135B6247043370044A4FB /* image */ = {
+			isa = PBXGroup;
+			children = (
+				E36135B82470439F0044A4FB /* person1.jpg */,
+				E36135B72470439F0044A4FB /* person2.jpg */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
 		E3949328246C0B6B00B64B6F /* watch-bpm-monitor */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +247,7 @@
 		E3E12BAA24598A1F001AC123 /* webrtc-heartbeat */ = {
 			isa = PBXGroup;
 			children = (
+				E36135B6247043370044A4FB /* image */,
 				E3E12BAB24598A1F001AC123 /* AppDelegate.swift */,
 				E3E12BAD24598A1F001AC123 /* SceneDelegate.swift */,
 				E3E12BAF24598A1F001AC123 /* FirstViewController.swift */,
@@ -435,8 +449,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3E12BBA24598A22001AC123 /* LaunchScreen.storyboard in Resources */,
+				E36135BA2470439F0044A4FB /* person1.jpg in Resources */,
 				E3E12BB724598A22001AC123 /* Assets.xcassets in Resources */,
 				E3E12BB524598A1F001AC123 /* Main.storyboard in Resources */,
+				E36135B92470439F0044A4FB /* person2.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

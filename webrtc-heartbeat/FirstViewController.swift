@@ -33,14 +33,11 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.localHBM.isHidden = true
-        self.remoteHBM.isHidden = true
-
-        self.localOffLine.isHidden = true
-        self.remoteOffLine.isHidden = true
-
-        self.localHeartMark.isHidden = true
-        self.remoteHeartMark.isHidden = true
+//        self.localHBM.isHidden = true
+//        self.remoteHBM.isHidden = true
+//
+//        self.localHeartMark.isHidden = true
+//        self.remoteHeartMark.isHidden = true
 
         self.remoteName.text = "-"
         self.localName.text = Setting.shared.name
