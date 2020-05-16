@@ -42,6 +42,9 @@ class FirstViewController: UIViewController {
         self.localHeartMark.isHidden = true
         self.remoteHeartMark.isHidden = true
 
+        self.remoteName.text = "-"
+        self.localName.text = Setting.shared.name
+
         if WCSession.isSupported() {
             let session = WCSession.default
             session.delegate = self
@@ -206,6 +209,9 @@ extension FirstViewController {
                 self.remoteOffLine.isHidden = true
                 self.remoteStream?.addVideoRenderer(self.remoteStreamView, track: 0)
             }
+            if let data = try? JSONSerialization.data(withJSONObject: ["name" : Setting.shared.name], options: []) {
+                self.send(data as NSData)
+            }
         }
 
         room.on(.ROOM_EVENT_REMOVE_STREAM) { obj in
@@ -238,11 +244,16 @@ extension FirstViewController {
             let dict = json as! [String: Any]
             print(dict)
             DispatchQueue.main.async {
-                if self.remoteHBM.isHidden {
-                    self.remoteHBM.isHidden = false
-                    self.remoteHeartMark.isHidden = false
+                if let name = dict["name"] as? String {
+                    self.remoteName.text = name
                 }
-                self.remoteHBM.text = dict["bpm"] as? String
+                if let bpm = dict["bpm"] as? String {
+                    if self.remoteHBM.isHidden {
+                        self.remoteHBM.isHidden = false
+                        self.remoteHeartMark.isHidden = false
+                    }
+                    self.remoteHBM.text = bpm
+                }
             }
         }
     }
