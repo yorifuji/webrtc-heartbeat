@@ -21,9 +21,13 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>Video Chat</string>
+	<string>ビデオチャットで映像を送信するためにカメラにアクセスします。</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>watchで計測した心拍数をビデオチャットで共有します、信頼のできる相手と利用してください。</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>watchで計測した心拍数をビデオチャットで共有します、信頼のできる相手と利用してください。</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Video Chat</string>
+	<string>ビデオチャットで音声を入力するためにマイクにアクセスします。</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
