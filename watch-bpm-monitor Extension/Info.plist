@@ -31,7 +31,9 @@
 		<string>com.apple.watchkit</string>
 	</dict>
 	<key>NSHealthShareUsageDescription</key>
-	<string>ビデオチャットで心拍数を共有します</string>
+	<string>watchで計測した心拍数をビデオチャットで共有します、信頼のできる相手と利用してください。</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>watchで計測した心拍数をビデオチャットで共有します、信頼のできる相手と利用してください。</string>
 	<key>WKBackgroundModes</key>
 	<array>
 		<string>workout-processing</string>
