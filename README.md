@@ -8,6 +8,8 @@ Sample code for video chat using webrtc, with Apple Watch (get heart rate).
 
 ![](image/IMG_4734.PNG)
 
+![](image/IMG_4740.PNG)
+
 # how-to build
 
 - install frameworks by cocoapods
