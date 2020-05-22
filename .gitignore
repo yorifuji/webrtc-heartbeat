@@ -1,3 +1,4 @@
 .gitignore
 Pods/
+webrtc-heartbeat.xcodeproj/xcuserdata/
 webrtc-heartbeat.xcworkspace/xcuserdata/
