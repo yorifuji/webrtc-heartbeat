@@ -8,7 +8,7 @@
 
 iOSで動くビデオチャットアプリのサンプルコードです、音声・映像・データ通信はWebRTCを利用しています。
 
-Apple Watchで取得した心拍数をネットワーク経由で共有します。
+Apple Watchがあれば心拍数をネットワーク経由で共有することができます。
 
 iOSアプリとwatchOSアプリで構成されています。
 
@@ -28,12 +28,13 @@ WebRTCの実装は [SKyWay](https://webrtc.ecl.ntt.com/) を使っています�
 
 ## ビルド手順
 
-- リポジトリをチェックアウト
-- CococaPodsでSKyWayをインストール
++ リポジトリをチェックアウト
+- CocoaPodsでSKyWayをインストール
 ```
 pod install
 ```
-- AppDelegate.swiftにSkyWayのAPI KEYをセットします
+- `webrtc-heartbeat.xcworkspace` を開く
+- `AppDelegate.swift` にSkyWayのAPI KEYをセットします
 ```swift
     var skywayAPIKey = "" // xxxx-xxx-xxx-xxxx...
     var skywayDomain = "" // localhost,...
